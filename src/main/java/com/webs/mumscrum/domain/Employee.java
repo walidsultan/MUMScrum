@@ -16,7 +16,7 @@ import javax.persistence.Id;
  *
  * @author 984627
  */
-//@Entity
+@Entity
 public class Employee implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

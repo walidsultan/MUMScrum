@@ -21,7 +21,7 @@ import javax.persistence.OneToOne;
  *
  * @author 984627
  */
-//@Entity
+@Entity
 public class Sprint implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
