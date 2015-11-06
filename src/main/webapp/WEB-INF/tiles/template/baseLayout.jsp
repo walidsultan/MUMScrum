@@ -22,7 +22,7 @@
 	<div class="container">
 		<div class="header">
 		<div>
-		<img alt="logo" src="/mumscrum/resource/images/logo.jpg" class="logo">
+		<img alt="logo" src="/MUMScrum/resource/images/logo.jpg" class="logo">
 			<ul class="nav nav-pills pull-right">
 				<tiles:insertAttribute name="navigation" />
 			</ul>
