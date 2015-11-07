@@ -7,6 +7,9 @@
 			code="navigation.home.label" /></a></li>
 <li><a href="<spring:url value="/sprints/"/>"><spring:message
 			code="navigation.sprints.label" /></a></li>
+			
+			<li><a href="<spring:url value="/releases/"/>"><spring:message
+			code="navigation.releases.label" /></a></li>
 <security:authorize access="hasRole('admin')">
 	
 </security:authorize>

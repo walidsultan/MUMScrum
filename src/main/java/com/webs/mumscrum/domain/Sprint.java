@@ -14,6 +14,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
@@ -47,7 +48,7 @@ public class Sprint implements Serializable {
 	@DateTimeFormat(pattern="MM/dd/yyyy")
 	private Date endDate;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@Valid
 	private Release release;
 

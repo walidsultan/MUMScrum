@@ -10,36 +10,36 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.webs.mumscrum.domain.Sprint;
-import com.webs.mumscrum.service.SprintService;
+import com.webs.mumscrum.domain.Release;
+import com.webs.mumscrum.service.ReleaseService;
 
 @Controller
-@RequestMapping("/sprints")
-public class SprintsController {
+@RequestMapping("/releases")
+public class ReleasesController {
 
 	@Autowired
-	SprintService sprintService;
+	ReleaseService releaseService;
 
 	@RequestMapping(value = { "/", "" }, method = RequestMethod.GET)
 	public String index(Model model) {
 
-		model.addAttribute("sprints", sprintService.getAllSprints());
+		model.addAttribute("releases", releaseService.getAllReleases());
 
-		return "sprints";
+		return "releases";
 	}
 
 	@RequestMapping(value = { "/add" }, method = RequestMethod.GET)
-	public String addForm(@ModelAttribute("newSprint") Sprint newSprint,Model model) {
-		return "sprintAdd";
+	public String addForm(@ModelAttribute("newRelease") Release newRelease,Model model) {
+		return "releaseAdd";
 	}
 	
 	@RequestMapping(value = { "/add" }, method = RequestMethod.POST)
-	public String addSubmit(@ModelAttribute("newSprint") @Valid Sprint newSprint, BindingResult result) {
+	public String addSubmit(@ModelAttribute("newRelease") @Valid Release newRelease, BindingResult result) {
 		if(result.hasErrors()) {
-			return "sprintAdd";
+			return "releaseAdd";
 		}
 
-		sprintService.addSprint(newSprint);
-		return "redirect:/sprints";
+		releaseService.addRelease(newRelease);
+		return "redirect:/releases";
 	}
 }

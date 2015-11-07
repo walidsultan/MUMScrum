@@ -28,5 +28,15 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/sprintAdd.jsp" />
 	</definition>
 	
+ 	<definition name="releases" extends="baseLayout">
+		<put-attribute name="title" value="Releases" />
+		<put-attribute name="body" value="/WEB-INF/jsp/releases.jsp" />
+	</definition>
+	
+ 	<definition name="releaseAdd" extends="baseLayout">
+		<put-attribute name="title" value="Add Release" />
+		<put-attribute name="body" value="/WEB-INF/jsp/releaseAdd.jsp" />
+	</definition>
+	
 	
 </tiles-definitions>

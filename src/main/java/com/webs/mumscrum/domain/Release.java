@@ -14,19 +14,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 /**
  *
  * @author 984627
  */
-@Entity
+@Entity(name="ScrumRelease")
 public class Release implements Serializable {
 
-    private static final long serialVersionUID = 946492345332031189L;
+	private static final long serialVersionUID = 1L;
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    @NotEmpty
     private String name;
+    
     @OneToMany(cascade = CascadeType.ALL)
     private List<Sprint> sprints;
 
