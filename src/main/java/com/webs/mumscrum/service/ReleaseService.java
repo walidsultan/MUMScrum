@@ -16,6 +16,6 @@ import java.util.List;
  */
 public interface ReleaseService {
     public Release getReleaseById(Long id);
-    public void addRelease(Release release);
+    public void saveRelease(Release release);
     public List<Release> getAllReleases();
 }

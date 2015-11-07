@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -39,7 +40,21 @@ public class SprintsController {
 			return "sprintAdd";
 		}
 
-		sprintService.addSprint(newSprint);
+		sprintService.saveSprint(newSprint);
+		return "redirect:/sprints";
+	}
+	
+	@RequestMapping(value = { "/edit/{id}" }, method = RequestMethod.GET)
+	public String editForm(@ModelAttribute("existingSprint") Sprint existingSprint,Model model, @PathVariable("id") long id) {
+		model.addAttribute("existingSprint",sprintService.getSprintById(id));
+		return "sprintEdit";
+	}
+	
+	@RequestMapping(value = { "/edit/{id}" }, method = RequestMethod.POST)
+	public String editSubmit(@ModelAttribute("existingSprint") Sprint existingSprint,Model model, @PathVariable("id") long id) {
+		Sprint sprint=   sprintService.getSprintById(id);
+		sprint=existingSprint;
+		sprintService.saveSprint(sprint);
 		return "redirect:/sprints";
 	}
 }

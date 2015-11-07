@@ -28,6 +28,11 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/sprintAdd.jsp" />
 	</definition>
 	
+ 	<definition name="sprintEdit" extends="baseLayout">
+		<put-attribute name="title" value="Edit Sprint" />
+		<put-attribute name="body" value="/WEB-INF/jsp/sprintEdit.jsp" />
+	</definition>
+	
  	<definition name="releases" extends="baseLayout">
 		<put-attribute name="title" value="Releases" />
 		<put-attribute name="body" value="/WEB-INF/jsp/releases.jsp" />

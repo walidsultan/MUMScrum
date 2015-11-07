@@ -25,7 +25,7 @@ public class ReleaseServiceImpl implements ReleaseService {
     }
 
     @Override
-    public void addRelease(Release release) {
+    public void saveRelease(Release release) {
     	releaseRepository.save(release);
     }
 

@@ -17,21 +17,21 @@ import org.springframework.transaction.annotation.Transactional;
 public class SprintServiceImpl implements SprintService {
 
     @Autowired
-    SprintRepository sprintReposiotry;
+    SprintRepository sprintRepository;
 
     @Override
     public Sprint getSprintById(Long id) {
-        return sprintReposiotry.findOne(id);
+        return sprintRepository.findOne(id);
     }
 
     @Override
-    public void addSprint(Sprint sprint) {
-        sprintReposiotry.save(sprint);
+    public void saveSprint(Sprint sprint) {
+    	sprintRepository.save(sprint);
     }
 
     @Override
     public List<Sprint> getAllSprints() {
-        return (List<Sprint>) sprintReposiotry.findAll();
+        return (List<Sprint>) sprintRepository.findAll();
     }
 
 }

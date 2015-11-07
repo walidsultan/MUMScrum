@@ -15,6 +15,6 @@ import java.util.List;
  */
 public interface SprintService {
     public Sprint getSprintById(Long id);
-    public void addSprint(Sprint sprint);
+    public void saveSprint(Sprint sprint);
     public List<Sprint> getAllSprints();
 }

@@ -39,7 +39,7 @@ public class ReleasesController {
 			return "releaseAdd";
 		}
 
-		releaseService.addRelease(newRelease);
+		releaseService.saveRelease(newRelease);
 		return "redirect:/releases";
 	}
 }
