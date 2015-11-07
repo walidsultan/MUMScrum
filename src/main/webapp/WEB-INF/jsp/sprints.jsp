@@ -4,6 +4,10 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+<div class="crudLinks">
+<a href="<spring:url value="/sprints/add"/>">Add Sprint</a>
+</div>
+
 <c:forEach items="${sprints}" var="sprint">
 	<div class="item">
 		<div class="thumbnail">

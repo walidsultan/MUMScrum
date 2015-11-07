@@ -23,4 +23,10 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/sprints.jsp" />
 	</definition>
 	
+ 	<definition name="sprintAdd" extends="baseLayout">
+		<put-attribute name="title" value="Add Sprint" />
+		<put-attribute name="body" value="/WEB-INF/jsp/sprintAdd.jsp" />
+	</definition>
+	
+	
 </tiles-definitions>

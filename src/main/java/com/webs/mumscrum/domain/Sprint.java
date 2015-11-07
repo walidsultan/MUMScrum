@@ -16,74 +16,91 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
  * @author 984627
  */
 @Entity
-public class Sprint implements Serializable{
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class Sprint implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-    private String name;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
-    public String getName() {
-        return name;
-    }
+	@NotEmpty
+	private String name;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	@NotNull 
+	@DateTimeFormat(pattern="MM/dd/yyyy")
+	private Date startDate;
+	@NotNull 
+	@DateTimeFormat(pattern="MM/dd/yyyy")
+	private Date endDate;
 
-    public Date getStartDate() {
-        return startDate;
-    }
+	@OneToOne(cascade = CascadeType.ALL)
+	@Valid
+	private Release release;
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
+	@OneToOne(cascade = CascadeType.ALL)
+	@Valid
+	private Employee scrumMaster;
 
-    public Date getEndDate() {
-        return endDate;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public Release getRelease() {
-        return release;
-    }
+	public Date getStartDate() {
+		return startDate;
+	}
 
-    public void setReleases(Release release) {
-        this.release = release;
-    }
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
 
-    public Employee getScrumMaster() {
-        return scrumMaster;
-    }
+	public Date getEndDate() {
+		return endDate;
+	}
 
-    public void setScrumMaster(Employee scrumMaster) {
-        this.scrumMaster = scrumMaster;
-    }
-    
-    private Date startDate;
-    private Date endDate;
-    
-    @OneToOne(cascade = CascadeType.ALL)
-    private Release release;
-     
-    @OneToOne(cascade = CascadeType.ALL)
-    private Employee scrumMaster;
-    
-    public Long getId() {
-        return id;
-    }
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-    
+	public Release getRelease() {
+		return release;
+	}
+
+	public void setReleases(Release release) {
+		this.release = release;
+	}
+
+	public Employee getScrumMaster() {
+		return scrumMaster;
+	}
+
+	public void setScrumMaster(Employee scrumMaster) {
+		this.scrumMaster = scrumMaster;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 }

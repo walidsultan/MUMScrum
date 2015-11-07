@@ -43,6 +43,7 @@
 body {
 	width: 800px;
 	margin: 0 auto;
+	background-color:#F5F8FF;
 }
 
 .nav li {
@@ -149,4 +150,16 @@ body {
     top: -45px;
     color: #445566;
     font-size: 21px;
+}
+
+.crudLinks
+{
+	width:100%;
+	float:left;
+}
+
+.crudLinks a
+{
+	float:right;
+	text-decoration: none;
 }
