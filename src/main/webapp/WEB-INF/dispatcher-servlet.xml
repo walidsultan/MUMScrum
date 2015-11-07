@@ -11,7 +11,7 @@
 
     <mvc:annotation-driven />
 
-    <context:component-scan base-package="com.webs.mumscrum.controller" />
+    <context:component-scan base-package="com.webs.mumscrum" />
 
     <bean
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -44,4 +44,15 @@
 	</bean>
 
 	<mvc:resources location="/resources/" mapping="/resource/**" />
+	
+	<mvc:interceptors>
+ 		<bean class= "org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name="paramName" value="language"/>
+	 	</bean>	 	
+ 	</mvc:interceptors>
+     <!-- 		this is the parameter that the interceptor looks for -->	
+
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<property name="defaultLocale" value="en_US"/>
+	</bean>
 </beans>

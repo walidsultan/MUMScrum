@@ -9,12 +9,18 @@
 		<put-attribute name="heading" value="/WEB-INF/tiles/template/header.jsp" />
 		<put-attribute name="tagline" value="" />
  		<put-attribute name="navigation" value="/WEB-INF/tiles/template/navigation.jsp" />
-		<put-attribute name="body" value="" />
+		<put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/tiles/template/footer.jsp" />
 	</definition>
 
  	<definition name="welcome" extends="baseLayout">
 		<put-attribute name="title" value="Welcome" />
+	</definition>
+	
+	
+ 	<definition name="sprints" extends="baseLayout">
+		<put-attribute name="title" value="Sprints" />
+		<put-attribute name="body" value="/WEB-INF/jsp/sprints.jsp" />
 	</definition>
 	
 </tiles-definitions>

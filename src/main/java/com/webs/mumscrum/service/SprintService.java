@@ -14,7 +14,7 @@ import java.util.List;
  * @author 984627
  */
 public interface SprintService {
-    public Sprint getServiceById(Long id);
-    public void addService(Sprint sprint);
-    public List<Sprint> getAllServices();
+    public Sprint getSprintById(Long id);
+    public void addSprint(Sprint sprint);
+    public List<Sprint> getAllSprints();
 }

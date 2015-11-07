@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.webs.mumscrum.respository;
+package com.webs.mumscrum.repository;
 import com.webs.mumscrum.domain.Sprint;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

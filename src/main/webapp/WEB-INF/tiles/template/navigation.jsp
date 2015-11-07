@@ -5,7 +5,7 @@
 
 <li><a href="<spring:url value="/"/>"><spring:message
 			code="navigation.home.label" /></a></li>
-<li><a href="<spring:url value="/products/"/>"><spring:message
+<li><a href="<spring:url value="/sprints/"/>"><spring:message
 			code="navigation.sprints.label" /></a></li>
 <security:authorize access="hasRole('admin')">
 	
