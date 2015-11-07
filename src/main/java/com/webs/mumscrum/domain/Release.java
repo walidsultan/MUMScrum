@@ -18,7 +18,7 @@ import javax.persistence.OneToMany;
  *
  * @author 984627
  */
-//@Entity
+@Entity
 public class Release implements Serializable {
 
     private static final long serialVersionUID = 946492345332031189L;

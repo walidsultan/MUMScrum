@@ -53,12 +53,12 @@ public class Sprint implements Serializable{
         this.endDate = endDate;
     }
 
-    public List<Release> getReleases() {
-        return releases;
+    public Release getRelease() {
+        return release;
     }
 
-    public void setReleases(List<Release> releases) {
-        this.releases = releases;
+    public void setReleases(Release release) {
+        this.release = release;
     }
 
     public Employee getScrumMaster() {
@@ -72,8 +72,8 @@ public class Sprint implements Serializable{
     private Date startDate;
     private Date endDate;
     
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Release> releases;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Release release;
      
     @OneToOne(cascade = CascadeType.ALL)
     private Employee scrumMaster;
