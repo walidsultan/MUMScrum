@@ -16,8 +16,8 @@
 				
 				<p>
 
-					<input type="button" class="btn" id="${category.id}"
-						value="Details" />
+			<a class="btn"
+						href="<spring:url value="/releases/edit/${release.id}"/>">Edit</a>
 				</p>
 
 			</div>
