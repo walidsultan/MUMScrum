@@ -7,10 +7,13 @@
 package com.webs.mumscrum.domain;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 /**
  *
@@ -18,9 +21,7 @@ import javax.persistence.Id;
  */
 @Entity
 public class Employee implements Serializable{
-    /**
-	 * 
-	 */
+  
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -29,7 +30,8 @@ public class Employee implements Serializable{
 
     private String FirstName;
     private String LastName;
-    
+    @ManyToMany
+    private List<Role> roles;
     
     public String getFirstName() {
 		return FirstName;
@@ -54,6 +56,14 @@ public class Employee implements Serializable{
     public void setId(Long id) {
         this.id = id;
     }
+
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
     
     
     

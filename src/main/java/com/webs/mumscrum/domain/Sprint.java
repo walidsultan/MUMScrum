@@ -51,11 +51,10 @@ public class Sprint implements Serializable {
 	@DateTimeFormat(pattern="MM/dd/yyyy")
 	private Date endDate;
 
-	@NotNull
-	@OneToOne(cascade=CascadeType.REFRESH)
+	@OneToOne
 	private Release scrumRelease;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	private Employee scrumMaster;
 
 	public String getName() {
