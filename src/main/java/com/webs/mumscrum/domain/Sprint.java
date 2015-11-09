@@ -10,10 +10,12 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -39,6 +41,7 @@ public class Sprint implements Serializable {
 	private Long id;
 
 	@NotEmpty
+	@Column(unique=true)
 	private String name;
 
 	@NotNull 
@@ -48,12 +51,11 @@ public class Sprint implements Serializable {
 	@DateTimeFormat(pattern="MM/dd/yyyy")
 	private Date endDate;
 
-	@ManyToOne
-	@Valid
-	private Release release;
+	@NotNull
+	@OneToOne(cascade=CascadeType.REFRESH)
+	private Release scrumRelease;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@Valid
 	private Employee scrumMaster;
 
 	public String getName() {
@@ -80,12 +82,13 @@ public class Sprint implements Serializable {
 		this.endDate = endDate;
 	}
 
-	public Release getRelease() {
-		return release;
+
+	public Release getScrumRelease() {
+		return scrumRelease;
 	}
 
-	public void setReleases(Release release) {
-		this.release = release;
+	public void setScrumRelease(Release scrumRelease) {
+		this.scrumRelease = scrumRelease;
 	}
 
 	public Employee getScrumMaster() {

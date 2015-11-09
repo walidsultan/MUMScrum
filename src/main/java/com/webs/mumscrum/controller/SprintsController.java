@@ -1,5 +1,7 @@
 package com.webs.mumscrum.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.webs.mumscrum.domain.Release;
 import com.webs.mumscrum.domain.Sprint;
+import com.webs.mumscrum.service.ReleaseService;
 import com.webs.mumscrum.service.SprintService;
 
 @Controller
@@ -20,10 +24,18 @@ public class SprintsController {
 
 	@Autowired
 	SprintService sprintService;
+	
+	@Autowired
+	ReleaseService releaseService;
 
+	
+	@ModelAttribute("releases")
+	public List<Release> getReleases(){
+		return releaseService.getAllReleases();
+	}
+	
 	@RequestMapping(value = { "/", "" }, method = RequestMethod.GET)
 	public String index(Model model) {
-
 		model.addAttribute("sprints", sprintService.getAllSprints());
 
 		return "sprints";
@@ -46,6 +58,7 @@ public class SprintsController {
 	
 	@RequestMapping(value = { "/edit/{id}" }, method = RequestMethod.GET)
 	public String editForm(@ModelAttribute("existingSprint") Sprint existingSprint,Model model, @PathVariable("id") long id) {
+	
 		model.addAttribute("existingSprint",sprintService.getSprintById(id));
 		return "sprintEdit";
 	}

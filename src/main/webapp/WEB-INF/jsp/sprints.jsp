@@ -21,10 +21,12 @@
 					End Date:
 					<fmt:formatDate value="${sprint.endDate}" var="formattedEndDate"
 						type="date" pattern="MM-dd-yyyy" />${formattedEndDate}</p>
+
 				<p>
 					<a class="btn"
 						href="<spring:url value="/sprints/edit/${sprint.id}"/>">Edit</a>
 				</p>
+
 
 			</div>
 		</div>

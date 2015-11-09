@@ -8,6 +8,7 @@ package com.webs.mumscrum.domain;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,10 +31,8 @@ public class Release implements Serializable {
     private Long id;
     
     @NotEmpty
+    @Column(unique=true)
     private String name;
-    
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Sprint> sprints;
 
     public String getName() {
         return name;
@@ -41,14 +40,6 @@ public class Release implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<Sprint> getSprints() {
-        return sprints;
-    }
-
-    public void setSprints(List<Sprint> sprints) {
-        this.sprints = sprints;
     }
 
     public Long getId() {
