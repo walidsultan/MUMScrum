@@ -50,4 +50,23 @@
 	</definition>
 	
 	
+	
+	
+ 	<definition name="userStories" extends="baseLayout">
+		<put-attribute name="title" value="User Stories" />
+		<put-attribute name="body" value="/WEB-INF/jsp/userStories.jsp" />
+	</definition>
+	
+ 	<definition name="userStoryAdd" extends="baseLayout">
+		<put-attribute name="title" value="Add User Story" />
+		<put-attribute name="body" value="/WEB-INF/jsp/userStoryAdd.jsp" />
+	</definition>
+	
+	
+ 	<definition name="userStoryEdit" extends="baseLayout">
+		<put-attribute name="title" value="Edit User Story" />
+		<put-attribute name="body" value="/WEB-INF/jsp/userStoryEdit.jsp" />
+	</definition>
+	
+	
 </tiles-definitions>

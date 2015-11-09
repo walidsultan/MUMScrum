@@ -27,7 +27,7 @@
 				<tiles:insertAttribute name="navigation" />
 			</ul>
 			</div>
-			<h3 class="mainTitle">MUM Scrum</h3>
+			<h3 class="mainTitle">MUM SCRUM</h3>
 			<security:authorize access="isAuthenticated()">
 			<div class="username">
 			Hello <security:authentication property="principal.username" />

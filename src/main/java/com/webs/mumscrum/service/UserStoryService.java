@@ -6,15 +6,16 @@
 
 package com.webs.mumscrum.service;
 
-import com.webs.mumscrum.domain.Release;
+import com.webs.mumscrum.domain.UserStory;
+
 import java.util.List;
 
 /**
  *
  * @author 984627
  */
-public interface ReleaseService {
-    public Release getReleaseById(Long id);
-    public void saveRelease(Release release);
-    public List<Release> getAllReleases();
+public interface UserStoryService {
+    public UserStory getUserStoryById(Long id);
+    public void saveUserStory(UserStory userStory);
+    public List<UserStory> getAllUserStories();
 }

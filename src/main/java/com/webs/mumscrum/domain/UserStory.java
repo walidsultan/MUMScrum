@@ -10,6 +10,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  *
@@ -23,14 +27,29 @@ public class UserStory implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    @NotEmpty
     private String name;
     private String description;
+    @NotNull
     private Integer DevEstimate;
     private Integer DevActual;
+    @NotNull
     private Integer TesterEstimate;
     private Integer TesterActual;
 
-    public String getName() {
+    @OneToOne
+    private Sprint sprint;
+    
+    public Sprint getSprint() {
+		return sprint;
+	}
+
+	public void setSprint(Sprint sprint) {
+		this.sprint = sprint;
+	}
+
+	public String getName() {
         return name;
     }
 
