@@ -65,7 +65,7 @@
 			<label class="control-label col-lg-2" for="username">Password:
 			</label>
 			<div class="col-lg-10">
-				<form:input type="password" id="username" path="username" rows="2" />
+				<form:input type="password" id="password" path="password" rows="2" />
 			</div>
 		</div>
 

@@ -12,6 +12,11 @@ INSERT INTO `mumscrum`.`employee` (`FirstName`, `LastName`,`dateOfBirth`,`email`
 INSERT INTO `mumscrum`.`employee` (`FirstName`, `LastName`,`dateOfBirth`,`email`,`username`,`password`) VALUES ('Eyob', 'Mokria','1984-07-28','eyob@gmail.com','eyob','1234');
 
 INSERT INTO `mumscrum`.`employee_role` (`Employee_id`, `roles_id`) VALUES ('1', '2');
+INSERT INTO `mumscrum`.`employee_role` (`Employee_id`, `roles_id`) VALUES ('1', '1');
+INSERT INTO `mumscrum`.`employee_role` (`Employee_id`, `roles_id`) VALUES ('2', '1');
+INSERT INTO `mumscrum`.`employee_role` (`Employee_id`, `roles_id`) VALUES ('3', '3');
+INSERT INTO `mumscrum`.`employee_role` (`Employee_id`, `roles_id`) VALUES ('4', '4');
+
 
 INSERT INTO `mumscrum`.`sprint` (`endDate`, `name`, `startDate`,`scrumRelease_id`,`scrumMaster_id`) VALUES ('2015-12-14', 'Sprint 1', '2015-12-1',1,1);
 INSERT INTO `mumscrum`.`sprint` (`endDate`, `name`, `startDate`,`scrumRelease_id`,`scrumMaster_id`) VALUES ('2015-12-28', 'Sprint 2', '2015-12-15',2,2);
