@@ -9,7 +9,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
-    <mvc:annotation-driven />
+    <mvc:annotation-driven conversion-service="conversionService" />
 
     <context:component-scan base-package="com.webs.mumscrum" />
 
@@ -54,5 +54,16 @@
 
 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
 		<property name="defaultLocale" value="en_US"/>
+	</bean>
+	
+	<bean id="conversionService"
+		class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="formatters">
+			<set>
+				<bean class="com.webs.mumscrum.formatter.RoleFormatter">
+				</bean>
+
+			</set>
+		</property>
 	</bean>
 </beans>

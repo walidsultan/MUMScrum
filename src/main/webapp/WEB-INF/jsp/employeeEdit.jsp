@@ -5,56 +5,36 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<script type="text/javascript" src="/MUMScrum/resource/js/SprintAdd.js"></script>
-
-<form:form modelAttribute="existingSprint" class="form-horizontal">
+<form:form modelAttribute="existingEmployee" class="form-horizontal">
 	<fieldset>
-		<legend>Edit Sprint</legend>
+		<legend>Edit Employee</legend>
 
 		<form:errors path="*" cssClass="alert alert-danger" element="div" />
 
 		<div class="form-group">
-			<label class="control-label col-lg-2" for="name">Name: </label>
+			<label class="control-label col-lg-2" for="firstName">First Name: </label>
 			<div class="col-lg-10">
-				<form:input id="name" path="name" type="text"
+				<form:input id="name" path="firstName" type="text"
 					class="form:input-large" />
 			</div>
 		</div>
 
 
 		<div class="form-group">
-			<label class="control-label col-lg-2" for="description">Start
-				Date: </label>
+			<label class="control-label col-lg-2" for="lastName">Last
+				Name: </label>
 			<div class="col-lg-10">
-				<form:input id="startDate" path="startDate" rows="2" />
+				<form:input id="startDate" path="lastName" rows="2" />
 			</div>
 		</div>
 
 		<div class="form-group">
-			<label class="control-label col-lg-2" for="description">End
-				Date: </label>
+			<label class="control-label col-lg-2" for="roles">Roles: </label>
 			<div class="col-lg-10">
-				<form:input id="endDate" path="endDate" rows="2" />
+				<form:checkboxes items="${employeeRoles}" path="roles"  /> 
 			</div>
 		</div>
-
-		<div class="form-group">
-			<label for="release">Release:</label><br />
-
-			<form:select id="release" path="scrumRelease.id">
-				<form:option value="" label="Select Release"></form:option>
-				<form:options items="${releases}" itemLabel="name" itemValue="id"></form:options>
-			</form:select>
-		</div>
-	<div class="form-group">
-			<label for="release">SCRUM Master:</label><br/>
-
-			<form:select id="scrumMaster" path="scrumMaster.id">
-				<form:option value="" label="Select SCRUM Master"></form:option>
-				<form:options items="${scrumMasters}" itemLabel="firstName" itemValue="id"></form:options>
-			</form:select>
-		</div>
-
+${existingEmployee.roles}
 		<div class="form-group">
 			<div class="col-lg-offset-2 col-lg-10">
 				<input type="submit" id="btnAdd" class="btn btn-primary"

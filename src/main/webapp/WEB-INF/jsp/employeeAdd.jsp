@@ -12,27 +12,26 @@
 		<form:errors path="*" cssClass="alert alert-danger" element="div" />
 
 		<div class="form-group">
-			<label class="control-label col-lg-2" for="name">Name: </label>
+			<label class="control-label col-lg-2" for="firstName">First Name: </label>
 			<div class="col-lg-10">
-				<form:input id="name" path="name" type="text"
+				<form:input id="name" path="firstName" type="text"
 					class="form:input-large" />
 			</div>
 		</div>
 
 
 		<div class="form-group">
-			<label class="control-label col-lg-2" for="description">Start
-				Date: </label>
+			<label class="control-label col-lg-2" for="lastName">Last
+				Name: </label>
 			<div class="col-lg-10">
-				<form:input id="startDate" path="startDate" rows="2" />
+				<form:input id="startDate" path="lastName" rows="2" />
 			</div>
 		</div>
 
 		<div class="form-group">
-			<label class="control-label col-lg-2" for="description">End
-				Date: </label>
+			<label class="control-label col-lg-2" for="roles">Roles: </label>
 			<div class="col-lg-10">
-				<form:input id="endDate" path="endDate" rows="2" />
+				<form:checkboxes items="${employeeRoles}" path="roles"/> 
 			</div>
 		</div>
 	

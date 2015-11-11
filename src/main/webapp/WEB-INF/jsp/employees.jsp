@@ -5,7 +5,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <div class="crudLinks">
-	<a href="<spring:url value="/sprints/add"/>">Add Employee</a>
+	<a href="<spring:url value="/hrSubsystem/Employees/add"/>">Add Employee</a>
 </div>
 
 <c:forEach items="${employees}" var="employee">
@@ -20,6 +20,7 @@
 				</c:forEach>
 					</p>
 				<p>
+			
 					</p>
 
 				<p>

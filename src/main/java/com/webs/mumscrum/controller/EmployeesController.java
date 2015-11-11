@@ -1,5 +1,8 @@
 package com.webs.mumscrum.controller;
 
+import java.util.Arrays;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.webs.mumscrum.domain.Employee;
+import com.webs.mumscrum.domain.EmployeeRole;
 import com.webs.mumscrum.service.HRSubsystemService;
 
 @Controller
@@ -20,6 +24,11 @@ public class EmployeesController {
 	@Autowired
 	HRSubsystemService hrSubsystemService;
 
+	@ModelAttribute("employeeRoles")
+	public List<EmployeeRole> getEmployeeRoles() {
+		return Arrays.asList(EmployeeRole.values());
+	}
+	
 	@RequestMapping(value = { "/", "" }, method = RequestMethod.GET)
 	public String index(Model model) {
 
@@ -30,18 +39,18 @@ public class EmployeesController {
 
 	@RequestMapping(value = { "/add" }, method = RequestMethod.GET)
 	public String addForm(@ModelAttribute("newEmployee") Employee newEmployee, Model model) {
-		return "employeesAdd";
+		return "employeeAdd";
 	}
 
 	@RequestMapping(value = { "/add" }, method = RequestMethod.POST)
 	public String addSubmit(@ModelAttribute("newEmployee") @Valid Employee newEmployee, BindingResult result) {
 		if(result.hasErrors()) {
-			return "employeesAdd";
+			return "employeeAdd";
 		}
 
 		hrSubsystemService.saveEmployee(newEmployee);
 
-		return "redirect:/employees";
+		return "redirect:/hrSubsystem/Employees";
 	}
 
 	@RequestMapping(value = { "/edit/{id}" }, method = RequestMethod.GET)
@@ -57,7 +66,7 @@ public class EmployeesController {
 		Employee employee = hrSubsystemService.getEmployeeById(id);
 		employee = existingEmployee;
 		hrSubsystemService.saveEmployee(employee);
-		return "redirect:/employees";
+		return "redirect:/hrSubsystem/Employees";
 	}
 		
 }

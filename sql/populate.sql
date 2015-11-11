@@ -1,10 +1,10 @@
 INSERT INTO `mumscrum`.`scrumrelease` ( `name`) VALUES ('Release 1');
 INSERT INTO `mumscrum`.`scrumrelease` ( `name`) VALUES ('Release 2');
 
-INSERT INTO `mumscrum`.`role` ( `name`) VALUES ('Developer');
-INSERT INTO `mumscrum`.`role` ( `name`) VALUES ('ScrumMaster');
-INSERT INTO `mumscrum`.`role` ( `name`) VALUES ('Tester');
-INSERT INTO `mumscrum`.`role` ( `name`) VALUES ('HRAdmin');
+INSERT INTO `mumscrum`.`role` (`id`, `name`) VALUES (1,'Developer');
+INSERT INTO `mumscrum`.`role` (`id`,  `name`) VALUES (2,'ScrumMaster');
+INSERT INTO `mumscrum`.`role` (`id`,  `name`) VALUES (3,'Tester');
+INSERT INTO `mumscrum`.`role` ( `id`, `name`) VALUES (4,'HRAdmin');
 
 INSERT INTO `mumscrum`.`employee` (`FirstName`, `LastName`) VALUES ('Walid', 'Sultan');
 INSERT INTO `mumscrum`.`employee` (`FirstName`, `LastName`) VALUES ('Binxing', 'Binxing');
