@@ -5,6 +5,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+<script type="text/javascript" src="/MUMScrum/resource/js/EmployeeAdd.js"></script>
+
 <form:form modelAttribute="newEmployee" class="form-horizontal">
 	<fieldset>
 		<legend>Add new employee</legend>
@@ -25,6 +27,18 @@
 				Name: </label>
 			<div class="col-lg-10">
 				<form:input id="startDate" path="lastName" rows="2" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-lg-2" for="lastName">Date of Birth: </label>
+			<div class="col-lg-10">
+				<form:input id="dateOfBirth" path="dateOfBirth" rows="2" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-lg-2" for="lastName">Email: </label>
+			<div class="col-lg-10">
+				<form:input id="email" path="email" rows="2" />
 			</div>
 		</div>
 
