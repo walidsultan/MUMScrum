@@ -57,6 +57,19 @@
 			</div>
 
 		</div>
+		<div class="form-group">
+			<label class="control-label col-lg-2" for="username">User Name: </label>
+			<div class="col-lg-10">
+				<form:input id="username" path="username" rows="2" />
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="control-label col-lg-2" for="username">Password: </label>
+			<div class="col-lg-10">
+				<form:input type="password" id="username" path="username" rows="2" />
+			</div>
+		</div>
 
 		<div class="form-group">
 			<div class="col-lg-offset-2 col-lg-10">

@@ -36,6 +36,24 @@ public class Employee implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
+
 	@NotEmpty
 	@Size(min=4,max=15,message="First Name length should be between {1} and {0}")
     private String firstName;
@@ -51,6 +69,11 @@ public class Employee implements Serializable{
 	@Email
 	@NotEmpty
     private String email;
+	
+	@NotEmpty
+	private String username;
+	@NotEmpty
+	private String password;
 	
     public Date getDateOfBirth() {
 		return dateOfBirth;

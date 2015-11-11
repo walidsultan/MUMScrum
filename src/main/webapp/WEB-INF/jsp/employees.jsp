@@ -13,7 +13,7 @@
 	<div class="item">
 		<div class="thumbnail">
 			<div class="caption">
-				<h3>${employee.firstName}${employee.lastName}</h3>
+				<h3>${employee.firstName} ${employee.lastName}</h3>
 				<p>
 					Role(s):
 					<c:forEach items="${employee.roles}" var="role" varStatus="loop">

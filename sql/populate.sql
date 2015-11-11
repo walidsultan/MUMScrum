@@ -6,10 +6,10 @@ INSERT INTO `mumscrum`.`role` (`id`,  `name`) VALUES (2,'ScrumMaster');
 INSERT INTO `mumscrum`.`role` (`id`,  `name`) VALUES (3,'Tester');
 INSERT INTO `mumscrum`.`role` ( `id`, `name`) VALUES (4,'HRAdmin');
 
-INSERT INTO `mumscrum`.`employee` (`FirstName`, `LastName`) VALUES ('Walid', 'Sultan');
-INSERT INTO `mumscrum`.`employee` (`FirstName`, `LastName`) VALUES ('Binxing', 'Binxing');
-INSERT INTO `mumscrum`.`employee` (`FirstName`, `LastName`) VALUES ('Shukri', 'Abotteen');
-INSERT INTO `mumscrum`.`employee` (`FirstName`, `LastName`) VALUES ('Eyob', 'Mokria');
+INSERT INTO `mumscrum`.`employee` (`FirstName`, `LastName`,`dateOfBirth`,`email`,`username`,`password`) VALUES ('Walid', 'Sultan','1984-07-28','walid@gmail.com','walid','1234');
+INSERT INTO `mumscrum`.`employee` (`FirstName`, `LastName`,`dateOfBirth`,`email`,`username`,`password`) VALUES ('Binxing', 'Binxing','1984-07-28','binxing@gmail.com','binxing','1234');
+INSERT INTO `mumscrum`.`employee` (`FirstName`, `LastName`,`dateOfBirth`,`email`,`username`,`password`) VALUES ('Shukri', 'Abotteen','1984-07-28','shukri@gmail.com','shukri','1234');
+INSERT INTO `mumscrum`.`employee` (`FirstName`, `LastName`,`dateOfBirth`,`email`,`username`,`password`) VALUES ('Eyob', 'Mokria','1984-07-28','eyob@gmail.com','eyob','1234');
 
 INSERT INTO `mumscrum`.`employee_role` (`Employee_id`, `roles_id`) VALUES ('1', '2');
 

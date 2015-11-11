@@ -5,7 +5,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<script type="text/javascript" src="/MUMScrum/resource/js/EmployeeAdd.js"></script>
+<script type="text/javascript"
+	src="/MUMScrum/resource/js/EmployeeAdd.js"></script>
 
 <form:form modelAttribute="newEmployee" class="form-horizontal">
 	<fieldset>
@@ -14,7 +15,8 @@
 		<form:errors path="*" cssClass="alert alert-danger" element="div" />
 
 		<div class="form-group">
-			<label class="control-label col-lg-2" for="firstName">First Name: </label>
+			<label class="control-label col-lg-2" for="firstName">First
+				Name: </label>
 			<div class="col-lg-10">
 				<form:input id="name" path="firstName" type="text"
 					class="form:input-large" />
@@ -30,7 +32,8 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="control-label col-lg-2" for="lastName">Date of Birth: </label>
+			<label class="control-label col-lg-2" for="lastName">Date of
+				Birth: </label>
 			<div class="col-lg-10">
 				<form:input id="dateOfBirth" path="dateOfBirth" rows="2" />
 			</div>
@@ -42,13 +45,29 @@
 			</div>
 		</div>
 
+
+
 		<div class="form-group">
 			<label class="control-label col-lg-2" for="roles">Roles: </label>
 			<div class="col-lg-10">
-				<form:checkboxes items="${employeeRoles}" path="roles"/> 
+				<form:checkboxes items="${employeeRoles}" path="roles" />
 			</div>
 		</div>
-	
+		<div class="form-group">
+			<label class="control-label col-lg-2" for="username">User
+				Name: </label>
+			<div class="col-lg-10">
+				<form:input id="username" path="username" rows="2" />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="control-label col-lg-2" for="username">Password:
+			</label>
+			<div class="col-lg-10">
+				<form:input type="password" id="username" path="username" rows="2" />
+			</div>
+		</div>
 
 		<div class="form-group">
 			<div class="col-lg-offset-2 col-lg-10">

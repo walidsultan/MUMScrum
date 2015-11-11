@@ -19,4 +19,5 @@ public interface HRSubsystemService {
     public void saveEmployee(Employee employee);
     public List<Employee> getAllEmployees();
     public List<Employee> getEmployeesByRole(Long role);
+    public boolean isCorrectUsernameAndPassword(String username, String password);
 }

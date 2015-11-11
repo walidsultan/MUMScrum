@@ -22,4 +22,7 @@ public interface EmployeeRepository  extends CrudRepository<Employee,Long>{
 
 	@Query("select e from Employee e left join e.roles er where er.id = ?1")
 	List<Employee> findEmployeesByRole(Long role);
+
+	@Query("select e from Employee e where e.username = ?1")
+	Employee getEmployeeByUsername(String username);
 }
