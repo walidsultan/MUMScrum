@@ -5,23 +5,22 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <div class="crudLinks">
-	<a href="<spring:url value="/hrSubsystem/Employees/add"/>">Add Employee</a>
+	<a href="<spring:url value="/hrSubsystem/Employees/add"/>">Add
+		Employee</a>
 </div>
 
 <c:forEach items="${employees}" var="employee">
 	<div class="item">
 		<div class="thumbnail">
 			<div class="caption">
-				<h3>${employee.firstName} ${employee.lastName}</h3>
+				<h3>${employee.firstName}${employee.lastName}</h3>
 				<p>
-				Role(s):
-				<c:forEach items="${employee.roles}" var="role">
-					${role.name}
+					Role(s):
+					<c:forEach items="${employee.roles}" var="role" varStatus="loop">
+					${role.name}<c:if test="${!loop.last}">, </c:if>
+					
 				</c:forEach>
-					</p>
-				<p>
-			
-					</p>
+				</p>
 
 				<p>
 					<a class="btn"
