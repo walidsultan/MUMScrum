@@ -5,11 +5,9 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<script type="text/javascript" src="/MUMScrum/resource/js/SprintAdd.js"></script>
-
-<form:form modelAttribute="newSprint" class="form-horizontal">
+<form:form modelAttribute="newEmployee" class="form-horizontal">
 	<fieldset>
-		<legend>Add new sprint</legend>
+		<legend>Add new employee</legend>
 
 		<form:errors path="*" cssClass="alert alert-danger" element="div" />
 
@@ -37,27 +35,7 @@
 				<form:input id="endDate" path="endDate" rows="2" />
 			</div>
 		</div>
-		<div class="form-group">
-			<label for="release">Release:</label><br />
-
-			<form:select id="release_id" path="scrumRelease.id">
-				<form:option value="0" label="Select Release"></form:option>
-				<form:options items="${releases}" itemLabel="name" itemValue="id"></form:options>
-			</form:select>
-		</div>
-
-		<div class="form-group">
-			<label for="release">SCRUM Master:</label><br />
-
-			<form:select id="scrumMaster" path="scrumMaster.id">
-				<form:option value="0" label="Select SCRUM Master"></form:option>
-				<c:forEach var="scrumMaster" items="${scrumMasters}">
-					<form:option value="${scrumMaster.id}"
-						label="${scrumMaster.firstName} ${scrumMaster.lastName}"></form:option>
-				</c:forEach>
-
-			</form:select>
-		</div>
+	
 
 		<div class="form-group">
 			<div class="col-lg-offset-2 col-lg-10">

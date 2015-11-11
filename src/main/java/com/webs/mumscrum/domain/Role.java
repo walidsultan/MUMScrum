@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public abstract class Role implements Serializable {
+public class Role implements Serializable {
 
 	private static final long serialVersionUID = 1L;
     
@@ -18,7 +18,10 @@ public abstract class Role implements Serializable {
 	
     private String name;
     
-	public abstract EmployeeRole getEmployeeRole();
+	public EmployeeRole getEmployeeRole()
+	{
+		return EmployeeRole.NotDefined;
+	}
 
 	public String getName() {
 		return name;

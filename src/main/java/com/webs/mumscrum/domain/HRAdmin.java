@@ -1,6 +1,6 @@
 package com.webs.mumscrum.domain;
 
-public class HRAdminRole extends Role{
+public class HRAdmin extends Role{
 
 	private static final long serialVersionUID = 1L;
 

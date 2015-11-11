@@ -12,6 +12,9 @@
 			code="navigation.releases.label" /></a></li>
 			<li><a href="<spring:url value="/userStories/"/>"><spring:message
 			code="navigation.userStories.label" /></a></li>
+			
+			<li><a href="<spring:url value="/hrSubsystem/Employees"/>"><spring:message
+			code="navigation.employees.label" /></a></li>
 <security:authorize access="hasRole('admin')">
 	
 </security:authorize>

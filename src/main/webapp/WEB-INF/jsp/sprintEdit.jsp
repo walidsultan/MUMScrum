@@ -47,11 +47,15 @@
 			</form:select>
 		</div>
 	<div class="form-group">
-			<label for="release">SCRUM Master:</label><br/>
+			<label for="release">SCRUM Master:</label><br />
 
 			<form:select id="scrumMaster" path="scrumMaster.id">
-				<form:option value="" label="Select SCRUM Master"></form:option>
-				<form:options items="${scrumMasters}" itemLabel="firstName" itemValue="id"></form:options>
+				<form:option value="0" label="Select SCRUM Master"></form:option>
+				<c:forEach var="scrumMaster" items="${scrumMasters}">
+					<form:option value="${scrumMaster.id}"
+						label="${scrumMaster.firstName} ${scrumMaster.lastName}"></form:option>
+				</c:forEach>
+
 			</form:select>
 		</div>
 

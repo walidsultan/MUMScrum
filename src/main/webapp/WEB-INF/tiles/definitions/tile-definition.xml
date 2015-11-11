@@ -69,4 +69,21 @@
 	</definition>
 	
 	
+ 	<definition name="employees" extends="baseLayout">
+		<put-attribute name="title" value="Employees" />
+		<put-attribute name="body" value="/WEB-INF/jsp/employees.jsp" />
+	</definition>
+	
+ 	<definition name="employeeAdd" extends="baseLayout">
+		<put-attribute name="title" value="Add Employee" />
+		<put-attribute name="body" value="/WEB-INF/jsp/employeeAdd.jsp" />
+	</definition>
+	
+	
+ 	<definition name="employeeEdit" extends="baseLayout">
+		<put-attribute name="title" value="Edit Employee" />
+		<put-attribute name="body" value="/WEB-INF/jsp/employeeEdit.jsp" />
+	</definition>
+	
+	
 </tiles-definitions>
