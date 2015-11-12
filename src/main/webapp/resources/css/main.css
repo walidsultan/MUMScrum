@@ -172,3 +172,8 @@ body {
     background-color: #eee;
     text-align: left;
 }
+
+.chartContainer
+{
+	display:none;
+}
