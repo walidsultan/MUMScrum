@@ -54,14 +54,11 @@ public class UserStoriesController {
 	
 	@RequestMapping(value = { "/", "" }, method = RequestMethod.GET)
 	public String index(Model model) {
-		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		Employee employee=(Employee) auth.getPrincipal();
 		Boolean isScrumMaster= hasAuthority(auth,EmployeeRole.ScrumMaster);
 		Boolean isDeveloper= hasAuthority(auth,EmployeeRole.Developer);
 		Boolean isTester= hasAuthority(auth,EmployeeRole.Tester);
-		
-		System.out.println(isDeveloper);
 		
 		if (isScrumMaster) {
 		model.addAttribute("userStories", userStoryService.getAllUserStories());
@@ -123,6 +120,14 @@ public class UserStoriesController {
 	private void applyNullValues(UserStory userStory) {
 		if(userStory.getSprint().getId()==null || userStory.getSprint().getId().equals(0L)){
 			userStory.setSprint(null);
+		}
+		
+		if(userStory.getDeveloper().getId()==null || userStory.getDeveloper().getId().equals(0L)){
+			userStory.setDeveloper(null);
+		}
+		
+		if(userStory.getTester().getId()==null || userStory.getTester().getId().equals(0L)){
+			userStory.setTester(null);
 		}
 	}
 	
