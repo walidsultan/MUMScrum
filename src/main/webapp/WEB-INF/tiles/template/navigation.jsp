@@ -7,21 +7,22 @@
 			code="navigation.home.label" /></a></li>
 
 <security:authorize access="hasRole('ScrumMaster')">
-	<li><a href="<spring:url value="/sprints/"/>"><spring:message
-				code="navigation.sprints.label" /></a></li>
-
 	<li><a href="<spring:url value="/releases/"/>"><spring:message
 				code="navigation.releases.label" /></a></li>
-	<li><a href="<spring:url value="/userStories/"/>"><spring:message
-				code="navigation.userStories.label" /></a></li>
-
-
+	<li><a href="<spring:url value="/sprints/"/>"><spring:message
+				code="navigation.sprints.label" /></a></li>
 </security:authorize>
 
 <security:authorize access="hasRole('HRAdmin')">
 	<li><a href="<spring:url value="/hrSubsystem/Employees"/>"><spring:message
 				code="navigation.employees.label" /></a></li>
 </security:authorize>
+
+<security:authorize access="hasAnyRole('Developer','Tester','ScrumMaster')" >
+	<li><a href="<spring:url value="/userStories/"/>"><spring:message
+				code="navigation.userStories.label" /></a></li>
+</security:authorize>
+
 
 <security:authorize access="isAuthenticated()">
 	<li><a href="<spring:url value="/logout"/>"><spring:message

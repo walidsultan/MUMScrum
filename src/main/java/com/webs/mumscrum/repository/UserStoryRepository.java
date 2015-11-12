@@ -7,6 +7,9 @@
 package com.webs.mumscrum.repository;
 import com.webs.mumscrum.domain.UserStory;
 
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -16,5 +19,10 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserStoryRepository  extends CrudRepository<UserStory,Long>{
-    
+
+	@Query("select u from UserStory u where u.developer.id = ?1")
+	List<UserStory> getUserStoriesByDeveloperId(Long id);
+	
+	@Query("select u from UserStory u where u.tester.id = ?1")
+	List<UserStory> getUserStoriesByTesterId(Long id);
 }

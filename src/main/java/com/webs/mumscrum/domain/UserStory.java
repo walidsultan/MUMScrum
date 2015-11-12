@@ -40,6 +40,12 @@ public class UserStory implements Serializable {
 
     @OneToOne
     private Sprint sprint;
+
+    @OneToOne
+    private Role developer;
+ 
+	@OneToOne
+    private Role tester;
     
     public Sprint getSprint() {
 		return sprint;
@@ -104,5 +110,22 @@ public class UserStory implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+    
+    public Role getDeveloper() {
+  		return developer;
+  	}
+
+  	public void setDeveloper(Role developer) {
+  		this.developer = developer;
+  	}
+
+  	public Role getTester() {
+  		return tester;
+  	}
+
+  	public void setTester(Role tester) {
+  		this.tester = tester;
+  	}
+
 
 }

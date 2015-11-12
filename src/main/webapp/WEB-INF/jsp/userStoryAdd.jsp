@@ -50,6 +50,30 @@
 		</div>
 
 		<div class="form-group">
+			<label for="developer">Developer:</label><br />
+
+			<form:select id="developer" path="developer.id">
+				<form:option value="0" label="Select Developer"></form:option>
+				<c:forEach var="developer" items="${developers}">
+					<form:option value="${developer.id}"
+						label="${developer.firstName} ${developer.lastName}"></form:option>
+				</c:forEach>
+			</form:select>
+		</div>
+
+		<div class="form-group">
+			<label for="tester">Tester:</label><br />
+
+			<form:select id="tester" path="tester.id">
+				<form:option value="0" label="Select Tester"></form:option>
+				<c:forEach var="tester" items="${testers}">
+					<form:option value="${tester.id}"
+						label="${tester.firstName} ${tester.lastName}"></form:option>
+				</c:forEach>
+			</form:select>
+		</div>
+
+		<div class="form-group">
 			<label class="control-label col-lg-2" for="Description">Description:
 			</label>
 			<div class="col-lg-10">

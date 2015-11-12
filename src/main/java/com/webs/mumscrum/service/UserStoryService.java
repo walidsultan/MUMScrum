@@ -18,4 +18,6 @@ public interface UserStoryService {
     public UserStory getUserStoryById(Long id);
     public void saveUserStory(UserStory userStory);
     public List<UserStory> getAllUserStories();
+    public List<UserStory> getUserStoriesByDeveloperId(Long id);
+    public List<UserStory> getUserStoriesByTesterId(Long id);
 }
