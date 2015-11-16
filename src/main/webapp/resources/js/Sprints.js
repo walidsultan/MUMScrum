@@ -30,13 +30,16 @@ function loadBurnDownChart(sprintId) {
 }
 
 function showBurnDownChart(chartData) {
+	var chartWidth=800;
+	var chartHeight= 400;
+	
 	$.blockUI({
 		message : $('.chartContainer'),
 		css : {
 			border : 'none',
-			top : '25%',
-			left: '27%',
-			width : "800"
+			top : ($(window).height()-chartHeight)/2,
+			left: ($(window).width()-chartWidth)/2,
+			width : chartWidth
 		},
 		onBlock : function() {
 			$(".blockOverlay").on('click', function() {
@@ -51,8 +54,8 @@ function showBurnDownChart(chartData) {
 
 	$('.chartContainer').insertFusionCharts({
 		type : "column2d",
-		width : "800",
-		height : "400",
+		width : chartWidth,
+		height : chartHeight,
 		dataFormat : "json",
 		dataSource : {
 			chart : {
