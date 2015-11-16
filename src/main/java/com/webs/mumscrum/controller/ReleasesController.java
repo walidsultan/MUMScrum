@@ -1,5 +1,7 @@
 package com.webs.mumscrum.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +15,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.webs.mumscrum.domain.Release;
 import com.webs.mumscrum.domain.Sprint;
 import com.webs.mumscrum.service.ReleaseService;
+import com.webs.mumscrum.service.SprintService;
 
 @Controller
 @RequestMapping("/releases")
@@ -24,6 +28,9 @@ public class ReleasesController {
 
 	@Autowired
 	ReleaseService releaseService;
+	
+	@Autowired
+	SprintService sprintService;
 
 	@RequestMapping(value = { "/", "" }, method = RequestMethod.GET)
 	public String index(Model model) {
@@ -65,5 +72,9 @@ public class ReleasesController {
 		return "redirect:/releases";
 	}
 	
-	
+
+	@RequestMapping(value = { "/getSprints/{releaseId}" }, method = RequestMethod.GET)
+	public @ResponseBody List<Sprint> getSprints(@PathVariable("releaseId") Long releaseId) {
+		return sprintService.getSprintsByReleaseId(releaseId);
+	}
 }

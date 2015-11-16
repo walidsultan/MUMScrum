@@ -6,6 +6,10 @@
 
 package com.webs.mumscrum.repository;
 import com.webs.mumscrum.domain.Sprint;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,5 +19,8 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface SprintRepository  extends CrudRepository<Sprint,Long>{
+
+	@Query("select s from Sprint s where s.scrumRelease.id = ?1")
+	List<Sprint> getSprintsByReleaseId(Long releaseId);
     
 }

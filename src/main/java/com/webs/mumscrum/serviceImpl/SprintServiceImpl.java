@@ -34,4 +34,9 @@ public class SprintServiceImpl implements SprintService {
         return (List<Sprint>) sprintRepository.findAll();
     }
 
+	@Override
+	public List<Sprint> getSprintsByReleaseId(Long releaseId) {
+		return (List<Sprint>) sprintRepository.getSprintsByReleaseId(releaseId);
+	}
+
 }

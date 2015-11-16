@@ -2,10 +2,13 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<script type="text/javascript"
+	src="/MUMScrum/resource/js/Releases.js"></script>
+	
 <div class="crudLinks">
-<a href="<spring:url value="/releases/add"/>">Add Release</a>
+	<a href="<spring:url value="/releases/add"/>">Add Release</a>
 </div>
 
 <c:forEach items="${releases}" var="release">
@@ -13,11 +16,12 @@
 		<div class="thumbnail">
 			<div class="caption">
 				<h3>${release.name}</h3>
-				
+
 				<p>
 
-			<a class="btn"
+					<a class="btn"
 						href="<spring:url value="/releases/edit/${release.id}"/>">Edit</a>
+					<a class="btn viewSprints" releaseId="${release.id}">Sprints</a>
 				</p>
 
 			</div>
