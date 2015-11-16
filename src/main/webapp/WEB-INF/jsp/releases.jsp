@@ -4,8 +4,10 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<script type="text/javascript" src="/MUMScrum/resource/js/Releases.js"></script>
+
 <script type="text/javascript"
-	src="/MUMScrum/resource/js/Releases.js"></script>
+	src="/MUMScrum/resource/js/jquery.blockUI.js"></script>
 	
 <div class="crudLinks">
 	<a href="<spring:url value="/releases/add"/>">Add Release</a>
@@ -28,3 +30,13 @@
 		</div>
 	</div>
 </c:forEach>
+
+<div class="divSprintsList hidden">
+	<table>
+		<tr>
+			<td>Sprint Name</td>
+			<td>Start Date</td>
+			<td>End Date</td>
+		</tr>
+	</table>
+</div>
