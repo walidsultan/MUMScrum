@@ -51,7 +51,7 @@ public class UserStoryServiceImpl implements UserStoryService {
 
 	@Override
 	public void deleteUserStoryById(Long id) {
-		workLogRepository.deleteWorkLogByUserStorId(id);
+		workLogRepository.deleteWorkLogByUserStoryId(id);
 		userStoryRepository.delete(id);
 	}
 

@@ -103,4 +103,12 @@ public class SprintsController {
 			existingSprint.setScrumMaster(null);
 		}
 	}
+	
+
+	@RequestMapping(value = { "/delete/{id}" }, method = RequestMethod.GET)
+	public String deleteUserStory(@PathVariable("id") long id)
+	{
+		sprintService.deleteSprintById(id);
+		return "redirect:/sprints";
+	}
 }

@@ -40,6 +40,7 @@
 						href="<spring:url value="/sprints/edit/${sprint.id}"/>">Edit</a>
 					<security:authorize access="hasRole('ScrumMaster')">
 						<a class="btn viewBurnDownChart" sprintId="${sprint.id}">Burn Down</a>
+						<a class="btn deleteSprint" deleteUrl="<spring:url value="/sprints/delete/${sprint.id}"/>">Del</a>
 					</security:authorize>
 				</p>
 			</div>

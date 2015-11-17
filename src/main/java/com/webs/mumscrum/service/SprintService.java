@@ -18,4 +18,5 @@ public interface SprintService {
     public void saveSprint(Sprint sprint);
     public List<Sprint> getAllSprints();
 	public List<Sprint> getSprintsByReleaseId(Long releaseId);
+	public void deleteSprintById(long id);
 }

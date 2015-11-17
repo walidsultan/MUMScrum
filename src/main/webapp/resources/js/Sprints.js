@@ -4,6 +4,13 @@ $(document).ready(function() {
 		loadBurnDownChart($(this).attr('sprintId'));
 	});
 
+	$(".deleteSprint").click(function() {
+		var r = window.confirm("Are you sure want to delete this Sprint?");
+
+		if (r == true) {
+			window.location.href = $(this).attr('deleteUrl');
+		}
+	});
 });
 
 function loadBurnDownChart(sprintId) {

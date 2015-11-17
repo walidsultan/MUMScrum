@@ -19,5 +19,6 @@ public interface WorkLogService {
     public void saveWorkLog(WorkLog workLog);
     public List<WorkLog> getAllWorkLogs();
     public List<WorkLog> getWorkLogsBySprintId(Long sprintId);
-    public void deleteWorkLogByUserStorId(Long userStoryId);
+    public void deleteWorkLogByUserStoryId(Long userStoryId);
+    public void deleteWorkLogBySprintId(Long sprintId);
 }

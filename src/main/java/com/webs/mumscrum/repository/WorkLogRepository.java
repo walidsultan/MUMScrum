@@ -28,5 +28,10 @@ public interface WorkLogRepository  extends CrudRepository<WorkLog,Long>{
 	@Modifying
 	@Transactional
 	@Query("delete from WorkLog w where w.userStory.id = ?1")
-	public void deleteWorkLogByUserStorId(Long userStoryId);
+	public void deleteWorkLogByUserStoryId(Long userStoryId);
+
+	@Modifying
+	@Transactional
+	@Query("delete from WorkLog w where w.sprint.id = ?1")
+	public void deleteWorkLogBySprintId(Long sprintId);
 }
