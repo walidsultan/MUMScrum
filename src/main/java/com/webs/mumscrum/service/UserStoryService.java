@@ -20,4 +20,5 @@ public interface UserStoryService {
     public List<UserStory> getAllUserStories();
     public List<UserStory> getUserStoriesByDeveloperId(Long id);
     public List<UserStory> getUserStoriesByTesterId(Long id);
+    public void deleteUserStoryById(Long id);
 }

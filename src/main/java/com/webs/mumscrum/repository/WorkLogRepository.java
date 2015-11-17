@@ -9,9 +9,11 @@ import com.webs.mumscrum.domain.WorkLog;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
@@ -22,4 +24,9 @@ public interface WorkLogRepository  extends CrudRepository<WorkLog,Long>{
 	
 	@Query("select w from WorkLog w where w.sprint.id = ?1")
 	public List<WorkLog> getWorkLogsBySprintId(Long sprintId);
+
+	@Modifying
+	@Transactional
+	@Query("delete from WorkLog w where w.userStory.id = ?1")
+	public void deleteWorkLogByUserStorId(Long userStoryId);
 }

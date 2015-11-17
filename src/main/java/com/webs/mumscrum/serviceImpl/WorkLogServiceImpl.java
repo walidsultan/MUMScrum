@@ -39,6 +39,11 @@ public class WorkLogServiceImpl implements WorkLogService {
         return workLogRepository.getWorkLogsBySprintId(sprintId);
 	}
 
+	@Override
+	public void deleteWorkLogByUserStorId(Long userStoryId) {
+		workLogRepository.deleteWorkLogByUserStorId(userStoryId);
+	}
+
 	
 
 }

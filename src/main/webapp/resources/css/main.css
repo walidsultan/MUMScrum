@@ -22,11 +22,11 @@
 }
 
 .dialogHeader .closeDialog {
-	      border: 1px solid;
-    float: right;
-    border-radius: 100%;
-    padding: 3px 7px;
-    color: #333;
+	border: 1px solid;
+	float: right;
+	border-radius: 100%;
+	padding: 3px 7px;
+	color: #333;
 }
 
 .dialogFooter {
@@ -43,7 +43,7 @@
 body {
 	width: 800px;
 	margin: 0 auto;
-	background-color:#F5F8FF;
+	background-color: #F5F8FF;
 }
 
 .nav li {
@@ -104,18 +104,16 @@ body {
 	padding: 0 15px;
 	margin-right: 10px;
 	border-radius: 10px;
-	margin-bottom:13px;
+	margin-bottom: 13px;
 }
 
-.item.purchased
-{
+.item.purchased {
 	background-color: #ccc;
 }
 
-.item.purchased .btnPurchase
-{
-	display:none;
-} 
+.item.purchased .btnPurchase {
+	display: none;
+}
 
 .btn {
 	text-decoration: none;
@@ -123,7 +121,7 @@ body {
 	background-color: #666;
 	padding: 5px 10px;
 	border-radius: 5px;
-	cursor:pointer;
+	cursor: pointer;
 }
 
 .alert {
@@ -136,48 +134,57 @@ body {
 }
 
 .form-group {
-    margin-bottom: 11px;
+	margin-bottom: 11px;
 }
 
-.hidden{
-	display:none;
+.hidden {
+	display: none;
 }
 
-.username
-{
+.username {
 	float: right;
-    position: relative;
-    top: -45px;
-    color: #445566;
-    font-size: 21px;
+	position: relative;
+	top: -45px;
+	color: #445566;
+	font-size: 21px;
 }
 
-.crudLinks
-{
-	width:100%;
-	float:left;
+.crudLinks {
+	width: 100%;
+	float: left;
 }
 
-.crudLinks a
-{
-	float:right;
+.crudLinks a {
+	float: right;
 	text-decoration: none;
 }
 
-.readonly
-{
+.readonly {
 	border: solid 1px #999;
-    padding: 2px 5px;
-    display: inline-block;
-    background-color: #eee;
-    text-align: left;
+	padding: 2px 5px;
+	display: inline-block;
+	background-color: #eee;
+	text-align: left;
 }
 
-.chartContainer
-{
-	display:none;
+.chartContainer {
+	display: none;
 }
 
-.hidden{
-	display:none;
+.hidden {
+	display: none;
+}
+
+.divSprintsList table, .divSprintsList td {
+	border: 1px solid;
+}
+
+.divSprintsList table {
+	border-collapse: collapse;
+	width: 100%;
+	
+}
+
+.divSprintsList {
+	padding: 15px;
 }

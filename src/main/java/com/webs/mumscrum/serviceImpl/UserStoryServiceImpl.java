@@ -2,6 +2,7 @@ package com.webs.mumscrum.serviceImpl;
 
 import com.webs.mumscrum.domain.UserStory;
 import com.webs.mumscrum.repository.UserStoryRepository;
+import com.webs.mumscrum.repository.WorkLogRepository;
 import com.webs.mumscrum.service.UserStoryService;
 
 import java.util.List;
@@ -19,6 +20,9 @@ public class UserStoryServiceImpl implements UserStoryService {
 
 	@Autowired
 	UserStoryRepository userStoryRepository;
+	
+	@Autowired
+	WorkLogRepository workLogRepository;
 
 	@Override
 	public UserStory getUserStoryById(Long id) {
@@ -43,6 +47,12 @@ public class UserStoryServiceImpl implements UserStoryService {
 	@Override
 	public List<UserStory> getUserStoriesByTesterId(Long id) {
 		return userStoryRepository.getUserStoriesByTesterId(id);
+	}
+
+	@Override
+	public void deleteUserStoryById(Long id) {
+		workLogRepository.deleteWorkLogByUserStorId(id);
+		userStoryRepository.delete(id);
 	}
 
 }

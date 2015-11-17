@@ -131,4 +131,10 @@ public class UserStoriesController {
 		}
 	}
 	
+	@RequestMapping(value = { "/delete/{id}" }, method = RequestMethod.GET)
+	public String deleteUserStory(@PathVariable("id") long id)
+	{
+		userStoryService.deleteUserStoryById(id);
+		return "redirect:/userStories";
+	}
 }
