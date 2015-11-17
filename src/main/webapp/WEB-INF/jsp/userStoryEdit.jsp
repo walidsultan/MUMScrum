@@ -27,7 +27,7 @@
 				<c:if test="${!isScrumMaster }">
 					<div class="readonly">
 						<c:out value="${existingUserStory.name}" />
-						<form:input id="name" path="name" type="hidden"/>
+						<form:input id="name" path="name" type="hidden" />
 					</div>
 				</c:if>
 			</div>
@@ -38,21 +38,21 @@
 			<label class="control-label col-lg-2" for="DevEstimate">Developer
 				Estimate: </label>
 			<div class="col-lg-10">
-				<c:if test="${isScrumMaster || isDeveloper }">
+				<c:if test="${isScrumMaster || isDeveloperAssigned }">
 					<form:input id="name" path="DevEstimate" type="text"
 						class="form:input-large" />
 				</c:if>
-				<c:if test="${!isScrumMaster && !isDeveloper }">
+				<c:if test="${!isScrumMaster && !isDeveloperAssigned }">
 					<div class="readonly">
 						<c:out value="${existingUserStory.devEstimate}" />
-						<form:input id="devEstimate" path="DevEstimate" type="hidden"/>
+						<form:input id="devEstimate" path="DevEstimate" type="hidden" />
 					</div>
 				</c:if>
 
 			</div>
 		</div>
 
-		<c:if test="${isDeveloper }">
+		<c:if test="${isDeveloper && isDeveloperAssigned}">
 			<div class="form-group">
 				<label class="control-label col-lg-2" for="DevActual">Developer
 					Actual: </label>
@@ -67,22 +67,23 @@
 			<label class="control-label col-lg-2" for="TesterEstimate">Testing
 				Estimate: </label>
 			<div class="col-lg-10">
-				<c:if test="${isScrumMaster || isTester }">
+				<c:if test="${isScrumMaster || isTesterAssigned }">
 					<form:input id="testerEstimate" path="TesterEstimate" type="text"
 						class="form:input-large" />
 				</c:if>
 
-				<c:if test="${!isScrumMaster && !isTester }">
+				<c:if test="${!isScrumMaster && !isTesterAssigned }">
 					<div class="readonly">
 						<c:out value="${existingUserStory.testerEstimate}" />
-						<form:input id="testerEstimate" path="TesterEstimate" type="hidden"/>
+						<form:input id="testerEstimate" path="TesterEstimate"
+							type="hidden" />
 					</div>
 				</c:if>
 			</div>
 		</div>
-		
-		
-		<c:if test="${isTester }">
+
+
+		<c:if test="${isTester && isTesterAssigned }">
 			<div class="form-group">
 				<label class="control-label col-lg-2" for="testActual">Testing
 					Actual: </label>
@@ -129,11 +130,11 @@
 			</div>
 		</c:if>
 
-<c:if test="${!isScrumMaster}">
-	<form:input id="sprint_id" path="sprint.id" type="hidden"/>
-	<form:input id="developer_id" path="developer.id" type="hidden"/>
-	<form:input id="tester" path="tester.id" type="hidden"/>
-</c:if>
+		<c:if test="${!isScrumMaster}">
+			<form:input id="sprint_id" path="sprint.id" type="hidden" />
+			<form:input id="developer_id" path="developer.id" type="hidden" />
+			<form:input id="tester" path="tester.id" type="hidden" />
+		</c:if>
 		<div class="form-group">
 			<label class="control-label col-lg-2" for="Description">Description:
 			</label>

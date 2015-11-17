@@ -128,4 +128,20 @@ public class UserStory implements Serializable {
   	}
 
 
+  	@Override
+    public int hashCode() {
+        return Math.toIntExact(this.id);
+    }
+  	
+  	@Override
+    public boolean equals(Object item) {
+  		UserStory userStory= (UserStory) item;
+  		if(userStory.getId().equals(this.id)){
+  			return true;
+  		}else
+  		{
+  			return false;
+  		}
+    }
+    
 }
