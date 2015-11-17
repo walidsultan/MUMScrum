@@ -24,6 +24,7 @@
 					<a class="btn"
 						href="<spring:url value="/releases/edit/${release.id}"/>">Edit</a>
 					<a class="btn viewSprints" releaseId="${release.id}">Sprints</a>
+						<a class="btn deleteRelease" deleteUrl="<spring:url value="/releases/delete/${release.id}"/>">Delete</a>
 				</p>
 
 			</div>

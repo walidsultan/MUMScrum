@@ -4,6 +4,13 @@ $(document).ready(function() {
 		showSprints($(this).attr('releaseId'));
 	});
 
+	$(".deleteRelease").click(function() {
+		var r = window.confirm("Are you sure want to delete this Release?");
+
+		if (r == true) {
+			window.location.href = $(this).attr('deleteUrl');
+		}
+	});
 });
 
 function showSprints(releaseId) {

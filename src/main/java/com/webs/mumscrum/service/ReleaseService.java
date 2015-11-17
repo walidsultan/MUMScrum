@@ -17,4 +17,5 @@ public interface ReleaseService {
     public Release getReleaseById(Long id);
     public void saveRelease(Release release);
     public List<Release> getAllReleases();
+	public void deleteReleaseById(long id);
 }

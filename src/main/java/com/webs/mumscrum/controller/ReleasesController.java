@@ -77,4 +77,11 @@ public class ReleasesController {
 	public @ResponseBody List<Sprint> getSprints(@PathVariable("releaseId") Long releaseId) {
 		return sprintService.getSprintsByReleaseId(releaseId);
 	}
+	
+	@RequestMapping(value = { "/delete/{id}" }, method = RequestMethod.GET)
+	public String deleteRelease(@PathVariable("id") long id)
+	{
+		releaseService.deleteReleaseById(id);
+		return "redirect:/releases";
+	}
 }
