@@ -20,8 +20,8 @@ INSERT INTO `mumscrum`.`employee_role` (`Employee_id`, `roles_id`) VALUES ('4', 
 INSERT INTO `mumscrum`.`sprint` (`endDate`, `name`, `startDate`,`scrumRelease_id`,`scrumMaster_id`) VALUES ('2015-12-14', 'Sprint 1', '2015-12-1',1,1);
 INSERT INTO `mumscrum`.`sprint` (`endDate`, `name`, `startDate`,`scrumRelease_id`,`scrumMaster_id`) VALUES ('2015-12-28', 'Sprint 2', '2015-12-15',2,2);
 
-INSERT INTO `mumscrum`.`userstory` (`DevEstimate`, `TesterEstimate`, `name`, `sprint_id`) VALUES ('12', '12', 'UserStory 1', '1');
-INSERT INTO `mumscrum`.`userstory` (`DevEstimate`, `TesterEstimate`, `name`, `sprint_id`) VALUES ('5', '6', 'User Story 2', '1');
+INSERT INTO `mumscrum`.`userstory` (`DevEstimate`, `TesterEstimate`, `name`, `sprint_id`,`DevActual`,`TesterActual`,`developer_id`,`tester_id`) VALUES ('30', '10', 'UserStory 1', '1', '30', '10', '2', '3');
+INSERT INTO `mumscrum`.`userstory` (`DevEstimate`, `TesterEstimate`, `name`, `sprint_id`,`DevActual`,`TesterActual`,`developer_id`,`tester_id`) VALUES ('20', '10', 'User Story 2', '1', '20', '10', '2', '3');
 
 
 /*Burn Down Chart*/
