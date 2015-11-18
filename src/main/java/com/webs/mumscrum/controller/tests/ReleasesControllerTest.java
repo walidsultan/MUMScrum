@@ -41,7 +41,6 @@ public class ReleasesControllerTest {
 		List<Release> releases = releaseServiceMock.getAllReleases();
 
 		Assert.assertTrue(releases.size() == 1);
-		System.out.println(releases.get(0).getName());
 		Assert.assertTrue(releases.get(0).getName().equals("Release Test"));
 	}
 
