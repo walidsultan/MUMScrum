@@ -1,5 +1,7 @@
 package com.webs.mumscrum.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,8 +9,20 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class WorkLog {
-
+public class WorkLog implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	public WorkLog(){
+		
+	}
+	public WorkLog(Integer actualHours,Integer originalEstimate,Integer sprintDay,Sprint sprint,UserStory userStory){
+		this.ActualHours=actualHours;
+		this.OriginalEstimate=originalEstimate;
+		this.sprintDay=sprintDay;
+		this.sprint=sprint;
+		this.userStory=userStory;
+	}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;

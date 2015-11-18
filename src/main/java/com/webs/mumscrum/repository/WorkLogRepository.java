@@ -21,9 +21,12 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Repository
 public interface WorkLogRepository  extends CrudRepository<WorkLog,Long>{
-	
+
 	@Query("select w from WorkLog w where w.sprint.id = ?1")
 	public List<WorkLog> getWorkLogsBySprintId(Long sprintId);
+	
+	@Query("select w from WorkLog w where w.sprint.id = ?1 and w.userStory.id= ?2 and w.sprintDay=?3")
+	public WorkLog getWorkLogBySprintIdAndSprintDay(Long sprintId,Long userStoryId, Integer sprintDay);
 
 	@Modifying
 	@Transactional

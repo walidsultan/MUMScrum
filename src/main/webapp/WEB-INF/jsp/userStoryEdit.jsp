@@ -62,6 +62,12 @@
 				</div>
 			</div>
 		</c:if>
+		<c:if test="${!isDeveloper || !isDeveloperAssigned }">
+
+			<form:input id="devActual" path="DevActual" type="hidden" />
+
+		</c:if>
+
 
 		<div class="form-group">
 			<label class="control-label col-lg-2" for="TesterEstimate">Testing
@@ -93,6 +99,13 @@
 				</div>
 			</div>
 		</c:if>
+		
+		<c:if test="${!isTester || !isTesterAssigned }">
+
+			<form:input id="testerActual" path="TesterActual" type="hidden" />
+
+		</c:if>
+		
 		<c:if test="${isScrumMaster}">
 
 			<div class="form-group">
