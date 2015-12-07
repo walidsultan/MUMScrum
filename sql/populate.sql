@@ -23,6 +23,9 @@ INSERT INTO `mumscrum`.`sprint` (`endDate`, `name`, `startDate`,`scrumRelease_id
 INSERT INTO `mumscrum`.`userstory` (`DevEstimate`, `TesterEstimate`, `name`, `sprint_id`,`DevActual`,`TesterActual`,`developer_id`,`tester_id`) VALUES ('30', '10', 'UserStory 1', '1', '30', '10', '2', '3');
 INSERT INTO `mumscrum`.`userstory` (`DevEstimate`, `TesterEstimate`, `name`, `sprint_id`,`DevActual`,`TesterActual`,`developer_id`,`tester_id`) VALUES ('20', '10', 'User Story 2', '1', '20', '10', '2', '3');
 
+INSERT INTO `mumscrum`.`userstory` (`DevEstimate`, `TesterEstimate`, `name`, `sprint_id`,`DevActual`,`TesterActual`,`developer_id`,`tester_id`) VALUES ('30', '10', 'UserStory 3', '1', '30', '10', '2', '3');
+INSERT INTO `mumscrum`.`userstory` (`DevEstimate`, `TesterEstimate`, `name`, `sprint_id`,`DevActual`,`TesterActual`,`developer_id`,`tester_id`) VALUES ('40', '10', 'User Story 4', '1', '20', '10', '2', '3');
+
 
 /*Burn Down Chart*/
 INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('0', '40', '1', '1', '1');
@@ -41,20 +44,20 @@ INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`
 
 
 
-INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('0', '40', '1', '2', '1');
-INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('0', '50', '1', '2', '2');
-INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('10', '40', '2', '2', '1');
-INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('7', '50', '2', '2', '2');
-INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('20', '40', '3', '2', '1');
-INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('14', '50', '3', '2', '2');
-INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('30', '40', '4', '2', '1');
-INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('21', '50', '4', '2', '2');
-INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('30', '40', '5', '2', '1');
-INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('21', '50', '5', '2', '2');
-INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('40', '40', '6', '2', '1');
-INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('28', '50', '6', '2', '2');
-INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('30', '50', '7', '2', '2');
-INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('37', '50', '8', '2', '2');
-INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('43', '50', '9', '2', '2');
-INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('50', '50', '10', '2', '2');
+INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('0', '40', '1', '2', '3');
+INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('0', '50', '1', '2', '4');
+INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('10', '40', '2', '2', '3');
+INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('7', '50', '2', '2', '4');
+INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('20', '40', '3', '2', '3');
+INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('14', '50', '3', '2', '4');
+INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('30', '40', '4', '2', '3');
+INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('21', '50', '4', '2', '4');
+INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('30', '40', '5', '2', '3');
+INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('21', '50', '5', '2', '4');
+INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('40', '40', '6', '2', '3');
+INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('28', '50', '6', '2', '4');
+INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('30', '50', '7', '2', '3');
+INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('37', '50', '8', '2', '4');
+INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('43', '50', '9', '2', '3');
+INSERT INTO `mumscrum`.`worklog` (`ActualHours`, `OriginalEstimate`, `sprintDay`, `sprint_id`, `userStory_id`) VALUES ('50', '50', '10', '2', '3');
 
